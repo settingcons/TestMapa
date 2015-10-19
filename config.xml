@@ -43,7 +43,15 @@
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
 
-    <gap:plugin name="plugin.google.maps">
+    <feature name="http://api.phonegap.com/1.0/geolocation"/>
+
+    <feature name="Geolocation">
+        <param name="ios-package" value="CDVLocation" />
+        <param name="android-package" value="org.apache.cordova.geolocation.GeoBroker" />
+    </feature>
+
+
+    <gap:plugin name="plugin.google.maps.menusito" version="1.2.5" >
         <param name="API_KEY_FOR_ANDROID" value="AIzaSyBV8dpUzZwb9sehNCp8pWMcLYlVzJmqFDY" />
         <param name="API_KEY_FOR_IOS" value="AIzaSyC20OuzkWHlcJM--W2_WHs2Ndzfrof6BOw" />
     </gap:plugin>
