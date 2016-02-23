@@ -14,17 +14,6 @@ $(document).one("pageLoad", function(event, map) {
 function showMyLocation(map) {
   map.clear();
   
-  var locOptions = {
-    maximumAge: 3000,
-    timeout: 5000,
-    enableHighAccuracy: true
-  };
-
-  alert('watchPosition');
-  _wathID = map.watchPosition(IniciarCapturaOK,IniciarCapturaError,locOptions);
-
-
-  /*
   var success = function(location) {
     map.addMarker({
       'position': location.latLng,
@@ -45,29 +34,7 @@ function showMyLocation(map) {
   map.getMyLocation({
     enableHighAccuracy: true
   }, success, error);
-  */
 }
-
-function IniciarCapturaOK(posicion) {
-  try {
-    var captura = "";
-    captura += "  " + posicion.coords.latitude;
-    captura += "  " + posicion.coords.longitude;
-    captura += "  " + posicion.timestamp;
-    captura += "  " + posicion.coords.heading;
-    captura += "  " + posicion.coords.speed;
-    captura += "  " + posicion.coords.altitude;
-    captura += "  " + posicion.coords.accuracy;
-    captura += "  " + posicion.coords.altitudeAccuracy;
-    alert(captura);
-  }
-  catch (ex) {
-    alert('Exception en IniciarCapturaOK : ' + ex.message);
-  }
-}
-  function IniciarCapturaError(error){
-    alert('IniciarCapturaError : ' + error);
-  }
 
 </script>
 <h4 class="ui-bar ui-bar-a">with jQuery</h4>
